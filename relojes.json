@@ -1,0 +1,95 @@
+{
+    "relojes": [
+      {
+        "id": 1,
+        "nombre": "Omega Seamaster",
+        "descripcion": "Reloj de lujo para buceo profesional",
+        "categoria": "Reloj de lujo",
+        "precio": 5000,
+        "valoracion": {"puntuacion": 4.8, "votos": 25},
+        "imagen": "img/reloj-de-lujo-01.jpg"
+      },
+      {
+        "id": 2,
+        "nombre": "Casio G-Shock",
+        "descripcion": "Reloj deportivo resistente a golpes",
+        "categoria": "Reloj deportivo",
+        "precio": 150,
+        "valoracion": {"puntuacion": 4.5, "votos": 40},
+        "imagen": "img/reloj-deportivo-01.jpeg"
+      },
+      {
+        "id": 3,
+        "nombre": "Rolex Submariner",
+        "descripcion": "Reloj de lujo para submarinismo",
+        "categoria": "Reloj de lujo",
+        "precio": 12000,
+        "valoracion": {"puntuacion": 4.9, "votos": 15},
+        "imagen": "img/reloj-de-lujo-02.jpeg"
+      },
+      {
+        "id": 4,
+        "nombre": "Garmin Forerunner 945",
+        "descripcion": "Reloj deportivo con funciones de seguimiento GPS",
+        "categoria": "Reloj deportivo",
+        "precio": 500,
+        "valoracion": {"puntuacion": 4.7, "votos": 30},
+        "imagen": "img/reloj-deportivo-02.jpg"
+      },
+      {
+        "id": 5,
+        "nombre": "Seiko Presage",
+        "descripcion": "Reloj analógico clásico",
+        "categoria": "Reloj analógico",
+        "precio": 800,
+        "valoracion": {"puntuacion": 4.6, "votos": 20},
+        "imagen": "img/reloj-analogico-01.jpeg"
+      },
+      {
+        "id": 6,
+        "nombre": "Apple Watch Series 6",
+        "descripcion": "Reloj inteligente con funciones avanzadas",
+        "categoria": "Reloj digital",
+        "precio": 700,
+        "valoracion": {"puntuacion": 4.8, "votos": 35},
+        "imagen": "img/reloj-digital-01.jpg"
+      },
+      {
+        "id": 7,
+        "nombre": "Tag Heuer Carrera",
+        "descripcion": "Reloj de lujo inspirado en la carrera automovilística",
+        "categoria": "Reloj de lujo",
+        "precio": 6000,
+        "valoracion": {"puntuacion": 4.7, "votos": 18},
+        "imagen": "img/reloj-de-lujo-03.jpeg"
+      },
+      {
+        "id": 8,
+        "nombre": "Suunto 9 Baro",
+        "descripcion": "Reloj deportivo con altímetro y barómetro",
+        "categoria": "Reloj deportivo",
+        "precio": 550,
+        "valoracion": {"puntuacion": 4.6, "votos": 25},
+        "imagen": "img/reloj-deportivo-03.jpg"
+      },
+      {
+        "id": 9,
+        "nombre": "Citizen Eco-Drive",
+        "descripcion": "Reloj analógico alimentado por luz solar",
+        "categoria": "Reloj analógico",
+        "precio": 300,
+        "valoracion": {"puntuacion": 4.5, "votos": 22},
+        "imagen": "img/reloj-analogico-02.jpg"
+      },
+      {
+        "id": 10,
+        "nombre": "Casio F91W",
+        "descripcion": "Reloj digital clásico y asequible",
+        "categoria": "Reloj digital",
+        "precio": 20,
+        "valoracion": {"puntuacion": 4.2, "votos": 50},
+        "imagen": "img/relog-digital-02.jpeg"
+      }
+    ]
+  }
+  
