@@ -34,3 +34,13 @@ Imagen seccion lujo - https://pxhere.com/en/photo/1206971
 Imagen seccion deporte - https://www.flickr.com/photos/68732633@N04/7520487412
 
 Imagen seccion analogico - https://www.pickpik.com/watch-fashion-accessories-clothes-wrist-creative-75176
+
+## Enlace de imagenes
+
+Video reloj deportivo - https://www.pexels.com/es-es/video/sano-mujer-exterior-sentado-4918259/
+
+Video reloj digital - 
+
+Video reloj analogico - 
+
+Video reloj de lujo - 

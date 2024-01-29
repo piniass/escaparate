@@ -11,8 +11,6 @@ function iniciar() {
     fetchCard()
 }
 
-
-
 function fetchCarousel() {
     fetch(url)
         .then(res => res.json())

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secciones</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="shortcut icon" href="img/reloj-de-arena.png" type="image/x-icon">
+    <style>
+        @media only screen and (max-width: 767px) {
+            video {
+                margin-left: -420px; 
+            }
+            }
+    </style>
+</head>
+<body>
+    <header class="container">
+        <nav class="navbar navbar-expand-lg d-flex align-items-center">
+            <a class="navbar-brand" href="index.html">A tiempo</a>
+
+            <div class="order-lg-last d-flex align-items-center"> <!-- En pantallas grandes, coloca al final -->
+                <svg class="" fill="#000000" width="50px" height="50px" viewBox="0 0 1.5 1.5" xmlns="http://www.w3.org/2000/svg"><path d="M0.982 0.794a0.375 0.375 0 1 0 -0.464 0 0.625 0.625 0 0 0 -0.389 0.511 0.063 0.063 0 0 0 0.125 0.014 0.5 0.5 0 0 1 0.994 0 0.063 0.063 0 0 0 0.063 0.056h0.007a0.063 0.063 0 0 0 0.055 -0.069 0.625 0.625 0 0 0 -0.391 -0.512ZM0.75 0.75a0.25 0.25 0 1 1 0.25 -0.25 0.25 0.25 0 0 1 -0.25 0.25Z"/></svg>
+
+                <svg class=""version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50px" height="50px" viewBox="0 0 2 2" xml:space="preserve"><style type="text/css">.linesandangles_een{fill:#111918;}</style><path class="linesandangles_een" d="m1.588 0.875 -0.419 -0.419 -0.088 0.088L1.412 0.875H0.588l0.331 -0.331 -0.088 -0.088L0.412 0.875H0.25l0.125 0.875h1.25l0.125 -0.875h-0.162zm-0.072 0.75H0.483L0.394 1h1.212l-0.089 0.625zM0.688 1.25H0.563v-0.125h0.125v0.125zm0.25 0h-0.125v-0.125h0.125v0.125zm0.25 0h-0.125v-0.125h0.125v0.125zm0.25 0h-0.125v-0.125h0.125v0.125zm-0.75 0.25H0.563v-0.125h0.125v0.125zm0.25 0h-0.125v-0.125h0.125v0.125zm0.25 0h-0.125v-0.125h0.125v0.125zm0.25 0h-0.125v-0.125h0.125v0.125z"/></svg>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link section-link" href="seccion.html?categoria=Reloj de lujo">Relojes de lujo</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link section-link" href="seccion.html?categoria=Reloj analogico">Relojes de analógicos</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link section-link" href="seccion.html?categoria=Reloj deportivo">Relojes deportivos</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link section-link" href="seccion.html?categoria=Reloj digital">Relojes digitales</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </nav>
+        <hr>
+    </header>
+
+    <main class="container">
+        <section class="overflow-hidden ">
+            <video id="video" autoplay muted loop class="object-fit-cover"></video>
+        </section>
+        <div class="d-flex align-items-center justify-content-between">
+            <hr class="flex-grow-1">
+            <h1 class="mx-3" id="titulo-separador">Productos</h1>
+            <hr class="flex-grow-1">
+        </div>
+    </main>
+    <footer class="bg-warning bg-gradient">
+        <section class="container d-flex align-items-center justify-content-between">
+            <article class="row">
+                <a href="#" class="text-decoration-none text-dark d-flex flex-column justify-content-center align-items-center text-center">
+                <img src="img/reloj-de-arena.png" class="object-fit-fill" alt="Logo a tiempo" width="64px" height="64px">
+                    A tiempo!</a>
+            </article>
+            <article class="d-flex flex-column align-items-end py-2">
+                <a href="#" class="text-decoration-none text-dark">Contacto</a>
+                <a href="#" class="text-decoration-none text-dark">Aviso legal</a>
+                <a href="#" class="text-decoration-none text-dark">Privacidad del sitio</a>
+                <a href="#" class="text-decoration-none text-dark">Condiciones de uso</a>
+                <a href="#" class="text-decoration-none text-dark mb-0">Condiciones de venta</a>
+            </article>
+            
+        </section>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <script src="seccion.js"></script>
+
+</body>
+</html>

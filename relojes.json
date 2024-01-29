@@ -40,7 +40,7 @@
         "id": 5,
         "nombre": "Seiko Presage",
         "descripcion": "Reloj analógico clásico",
-        "categoria": "Reloj analógico",
+        "categoria": "Reloj analogico",
         "precio": 800,
         "valoracion": {"puntuacion": 4.6, "votos": 20},
         "imagen": "img/reloj-analogico-01.jpeg"
@@ -76,7 +76,7 @@
         "id": 9,
         "nombre": "Citizen Eco-Drive",
         "descripcion": "Reloj analógico alimentado por luz solar",
-        "categoria": "Reloj analógico",
+        "categoria": "Reloj analogico",
         "precio": 300,
         "valoracion": {"puntuacion": 4.5, "votos": 22},
         "imagen": "img/reloj-analogico-02.jpg"
