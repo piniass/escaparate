@@ -43,7 +43,7 @@ function createCards(data) {
         cardSection.innerHTML += `
             <article class="col-12 m-1 p-0 card">
                 <div class="card-header p-0">
-                    <img src="${relojes.imagen}" class="object-fit-cover imagen-carta" alt="${relojes.nombre}" height="300px">
+                    <img src="${relojes.imagen}" class="object-fit-cover imagen-carta w-100" alt="${relojes.nombre}" height="300px">
                 </div>
                 <div class="p-3">
                     <h5>${relojes.nombre}</h5>
