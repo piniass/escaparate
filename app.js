@@ -1,6 +1,8 @@
 window.addEventListener('load', iniciar);
 const div = document.getElementsByTagName('div')[0];
 const imgCarousel = document.getElementsByClassName('img-carousel')
+const tituloCarousel = document.getElementsByClassName('titulo-carousel')
+const descCarousel = document.getElementsByClassName('desc-carousel')
 const cardSection = document.getElementById('cardSection')
 const url = 'relojes.json';
 const btnAnadir = document.getElementsByClassName('boton')
@@ -33,6 +35,9 @@ function loadCarousel(data) {
     for (let i = 0; i < imgCarousel.length; i++) {
         let relojes = data.relojes[i]; 
         imgCarousel[i].setAttribute('src', relojes.imagen);
+        console.log(relojes.nombre)
+        tituloCarousel[i].innerHTML = relojes.nombre
+        descCarousel[i].innerHTML = relojes.descripcion
         // console.log(imgCarousel[i]);
     }
 }
@@ -56,8 +61,8 @@ function createCards(data) {
                 </div>
             </article>
         `;
+
     }
-    estrella.innerHTML = ''
 }
 
 function anadirCarrito() {
@@ -76,6 +81,8 @@ function anadirCarrito() {
 function getValoracion(estrellas){
     console.log("valoracion:" + Math.round(estrellas))
     const estrella = document.createElement('span')
+    estrella.innerHTML = ''
+
     for (let index = 0; index < 5; index++) {
         estrella.innerHTML += '<span class="material-symbols-outlined text-warning ">star</span>'
 
@@ -83,6 +90,8 @@ function getValoracion(estrellas){
      }
      estrella.classList.add('material-symbols-outlined')
     return estrella.innerHTML
+    
+
 
 
 }
