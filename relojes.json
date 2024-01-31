@@ -6,7 +6,7 @@
         "descripcion": "Reloj de lujo para buceo profesional",
         "categoria": "Reloj de lujo",
         "precio": 5000,
-        "valoracion": {"puntuacion": 4.8, "votos": 25},
+        "valoracion": {"puntuacion": 4.2, "votos": 25},
         "imagen": "img/reloj-de-lujo-01.jpg"
       },
       {
@@ -15,8 +15,8 @@
         "descripcion": "Reloj deportivo resistente a golpes",
         "categoria": "Reloj deportivo",
         "precio": 150,
-        "valoracion": {"puntuacion": 4.5, "votos": 40},
-        "imagen": "img/reloj-deportivo-01.jpeg"
+        "valoracion": {"puntuacion": 3.5, "votos": 40},
+        "imagen": "img/reloj-deportivo-03.jpg"
       },
       {
         "id": 3,
@@ -33,7 +33,7 @@
         "descripcion": "Reloj deportivo con funciones de seguimiento GPS",
         "categoria": "Reloj deportivo",
         "precio": 500,
-        "valoracion": {"puntuacion": 4.7, "votos": 30},
+        "valoracion": {"puntuacion": 2.7, "votos": 30},
         "imagen": "img/reloj-deportivo-02.jpg"
       },
       {
@@ -42,7 +42,7 @@
         "descripcion": "Reloj analógico clásico",
         "categoria": "Reloj analogico",
         "precio": 800,
-        "valoracion": {"puntuacion": 4.6, "votos": 20},
+        "valoracion": {"puntuacion": 3.3, "votos": 20},
         "imagen": "img/reloj-analogico-01.jpeg"
       },
       {
@@ -69,8 +69,8 @@
         "descripcion": "Reloj deportivo con altímetro y barómetro",
         "categoria": "Reloj deportivo",
         "precio": 550,
-        "valoracion": {"puntuacion": 4.6, "votos": 25},
-        "imagen": "img/reloj-deportivo-03.jpg"
+        "valoracion": {"puntuacion": 2.6, "votos": 25},
+        "imagen": "img/reloj-deportivo-01.jpeg"
       },
       {
         "id": 9,
@@ -78,7 +78,7 @@
         "descripcion": "Reloj analógico alimentado por luz solar",
         "categoria": "Reloj analogico",
         "precio": 300,
-        "valoracion": {"puntuacion": 4.5, "votos": 22},
+        "valoracion": {"puntuacion": 3.1, "votos": 22},
         "imagen": "img/reloj-analogico-02.jpg"
       },
       {

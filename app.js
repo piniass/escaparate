@@ -33,7 +33,7 @@ function loadCarousel(data) {
     for (let i = 0; i < imgCarousel.length; i++) {
         let relojes = data.relojes[i]; 
         imgCarousel[i].setAttribute('src', relojes.imagen);
-        console.log(imgCarousel[i]);
+        // console.log(imgCarousel[i]);
     }
 }
 function createCards(data) {
@@ -48,11 +48,16 @@ function createCards(data) {
                 <div class="p-3">
                     <h5>${relojes.nombre}</h5>
                     <p>${relojes.descripcion}</p>
+                    <p>Categoria: ${relojes.categoria}</p>
+                    <p>Precio: ${relojes.precio}€</p>
+                    <p>${relojes.descripcion}</p>
+                    <p class="d-flex align-items-center">Valoracion: <span>${getValoracion(relojes.valoracion.puntuacion)}</span></p>
                     <button class="btn btn-warning bg-gradient boton">Añadir al carrito</button>
                 </div>
             </article>
         `;
     }
+    estrella.innerHTML = ''
 }
 
 function anadirCarrito() {
@@ -68,6 +73,16 @@ function anadirCarrito() {
     });
 }
 
+function getValoracion(estrellas){
+    console.log("valoracion:" + Math.round(estrellas))
+    const estrella = document.createElement('span')
+    for (let index = 0; index < 5; index++) {
+        estrella.innerHTML += '<span class="material-symbols-outlined text-warning ">star</span>'
+
+        
+     }
+     estrella.classList.add('material-symbols-outlined')
+    return estrella.innerHTML
 
 
-
+}
