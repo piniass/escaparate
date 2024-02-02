@@ -6,11 +6,39 @@ const descCarousel = document.getElementsByClassName('desc-carousel')
 const cardSection = document.getElementById('cardSection')
 const url = 'relojes.json';
 const btnAnadir = document.getElementsByClassName('boton')
+const loginIcon = document.getElementById('loginIcon')
+const formSession = document.getElementById('formSession')
+const closeIcon = document.getElementById('close')
+const form = document.getElementById('form')
+const inputNombre = document.getElementById('text')
+const inputPassword = document.getElementById('password')
 
 
 function iniciar() {
     fetchCarousel();
     fetchCard()
+}
+
+loginIcon.addEventListener('click', toggleForm)
+closeIcon.addEventListener('click',closeForm)
+form.addEventListener('submit', validarForm)
+
+function validarForm(ev){
+    ev.preventDefault()
+    formSession.classList.add('d-none')
+
+    console.log("Iniciar sesion")
+}
+
+function toggleForm(){
+    formSession.classList.toggle('d-none')
+    document.getElementsByTagName('body')[0].classList.toggle('overflow-hidden')
+    
+}
+
+function closeForm(){
+    formSession.classList.add('d-none')
+    document.getElementsByTagName('body')[0].classList.remove('overflow-hidden')
 }
 
 function fetchCarousel() {
@@ -26,7 +54,6 @@ function fetchCard(){
         .then(res=>res.json())
         .then(data=>createCards(data))
         .then(() => {
-            // Llama a anadirCarrito después de crear las tarjetas
             anadirCarrito();
         });
 }

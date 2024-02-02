@@ -17,22 +17,30 @@
         .imagen-carta:hover, .imgSection:hover{
             transform: scale(1.5);
         }
+
+        .icono{
+            font-size: 2rem;
+        }
+
+        .icono:hover{
+            cursor: pointer;
+        }
+       
+        #close{
+            cursor: pointer;
+        }
     
     </style>
 </head>
 <body>
     <header class="container">
-        <nav class="navbar navbar-expand-lg d-flex align-items-center">
+        <nav class="navbar navbar-expand-lg d-flex align-items-center pb-0">
             <a class="navbar-brand" href="index.html">A tiempo</a>
 
             <div class="order-lg-last d-flex align-items-center">
-                <span class="material-symbols-outlined">
-                    person
-                    </span>
-                    <span class="material-symbols-outlined">
-                        shopping_cart
-                        </span>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="material-symbols-outlined ms-3 icono" id="loginIcon">person</span>
+                <span class="material-symbols-outlined ms-3 icono">shopping_cart</span>
+                <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
@@ -148,7 +156,21 @@
         <section class="card-group" id="cardSection">
           
         </section>
-        
+        <section class="position-fixed top-50 start-50 translate-middle bg-white d-none shadow-sm rounded" id="formSession">
+            <article class="p-4 d-flex flex-column">
+                <span class="material-symbols-outlined text-end" id="close">close</span>
+                <h2>Iniciar sesión</h2>
+                <form action="" class="d-flex flex-column" id="form">
+                    <input type="text" class="form-control mb-3" name="text" id="text" placeholder="Nombre de usuario">
+                    <input type="password" class="form-control mb-3" name="password" id="password" placeholder="Contraseña">
+                    <div class="d-flex align-items-center justify-content-center mb-3">
+                        <p class="m-0">¿Es tu primera vez llegando <strong>A TIEMPO</strong>?</p> <a href="#" class="ms-2">Registrate</a>
+
+                    </div>
+                    <input type="submit" class="btn btn-success" value="Iniciar Sesion">
+                </form>
+            </article>
+        </section>
     </main>
     <footer class="bg-warning bg-gradient">
         <section class="container d-flex align-items-center justify-content-between">
