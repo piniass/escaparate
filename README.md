@@ -44,3 +44,5 @@ Video reloj digital -
 Video reloj analogico - 
 
 Video reloj de lujo - 
+
+Emoji triste - https://upload.wikimedia.org/wikipedia/commons/8/89/Sad_Emoji_-_FREE_%2850215487012%29.png

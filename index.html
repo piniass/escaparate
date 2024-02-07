@@ -37,9 +37,14 @@
         <nav class="navbar navbar-expand-lg d-flex align-items-center pb-0">
             <a class="navbar-brand" href="index.html">A tiempo</a>
 
-            <div class="order-lg-last d-flex align-items-center">
+            <div class="order-lg-last d-flex align-items-center" id="btn-container">
                 <span class="material-symbols-outlined ms-3 icono" id="loginIcon">person</span>
-                <span class="material-symbols-outlined ms-3 icono">shopping_cart</span>
+                <button class="border border-0 bg-white p-0 d-flex align-content-center justify-content-center" id="carrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <span class="material-symbols-outlined ms-3 icono" >shopping_cart</span>
+
+                </button>
+
+              
                 <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -56,9 +61,12 @@
                     <li class="nav-item active">
                         <a class="nav-link section-link" href="seccion.html?categoria=Reloj deportivo">Relojes deportivos</a>
                     </li>
-                    <li class="nav-item active">
                         <a class="nav-link section-link" href="seccion.html?categoria=Reloj digital">Relojes digitales</a>
                     </li>
+                    <form id="searchForm" action="busqueda.html" class="d-flex" role="search">
+                        <input id="searchInput" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
                 </ul>
             </div>
             
@@ -66,7 +74,21 @@
         <hr>
     </header>
 
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+      <div class="offcanvas-header">
+        <h3 class="offcanvas-title" id="offcanvasRightLabel">Carrito de compra</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <h4>Productos del carrito</h4>
+        <div id="elementos">
+
+        </div>
+      </div>
+    </div>
     <main class="container">
+
+       
         <div id="carouselExampleDark" class="carousel carousel-dark slide">
             <div class="carousel-indicators">
               <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -75,21 +97,21 @@
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="10000">
-                <img  class="d-block w-100 img-carousel object-fit-cover" alt="..." height="720px">
+                <img  class="d-block w-100 img-carousel object-fit-cover" alt="..." height="720px" loading="lazy">
                 <div class="carousel-caption d-block bg-dark bg-opacity-25">
                   <h5 class="text-light titulo-carousel"></h5>
                   <p class="text-light desc-carousel"></p>
                 </div>
               </div>
               <div class="carousel-item" data-bs-interval="2000">
-                <img  class="d-block w-100 img-carousel object-fit-cover" alt="..." height="720px">
+                <img  class="d-block w-100 img-carousel object-fit-cover" alt="..." height="720px" loading="lazy">
                 <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-25">
                   <h5 class="text-light titulo-carousel"></h5>
                   <p class="text-light desc-carousel"></p>
                 </div>
               </div>
               <div class="carousel-item">
-                <img  class="d-block w-100 img-carousel object-fit-cover" alt="..." height="720px">
+                <img  class="d-block w-100 img-carousel object-fit-cover" alt="..." height="720px" loading="lazy">
                 <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-25">
                   <h5 class="text-light titulo-carousel"></h5>
                   <p class="text-light desc-carousel"></p>
@@ -116,7 +138,7 @@
             <article class="col-12 col-md-6 my-3 mb-md-0">
                 <a href="seccion.html?categoria=Reloj de lujo" class="text-decoration-none text-dark">
                     <div class="img-container">
-                        <img src="img/seccion-lujo.jpg" class="w-100 object-fit-cover imgSection" alt="Seccion de relojes de lujo" height="300px">
+                        <img src="img/seccion-lujo.jpg" class="w-100 object-fit-cover imgSection" alt="Seccion de relojes de lujo" height="300px" loading="lazy">
                     </div>
                     <h3 class="text-center text-uppercase ">Relojes de lujo</h3>
                 </a>
@@ -124,7 +146,7 @@
             <article class="col-12 col-md-6 my-3 mb-md-0">
                 <a href="seccion.html?categoria=Reloj analogico" class="text-decoration-none text-dark">
                     <div class="img-container">
-                        <img src="img/seccion-analogica.jpg" class="w-100 object-fit-cover imgSection" alt="Seccion de relojes analógicos" height="300px">
+                        <img src="img/seccion-analogica.jpg" class="w-100 object-fit-cover imgSection" alt="Seccion de relojes analógicos" height="300px" loading="lazy">
                     </div>
                     <h3 class="text-center text-uppercase ">Relojes analógicos</h3>
                 </a>
@@ -132,7 +154,7 @@
             <article class="col-12 col-md-6 my-3 mb-md-0">
                 <a href="seccion.html?categoria=Reloj deportivo" class="text-decoration-none text-dark">
                     <div class="img-container">
-                        <img src="img/seccion-deporte.jpg" class="w-100 object-fit-cover imgSection" alt="Seccion de relojes deportivos" height="300px">
+                        <img src="img/seccion-deporte.jpg" class="w-100 object-fit-cover imgSection" alt="Seccion de relojes deportivos" height="300px" loading="lazy">
                     </div>
                     <h3 class="text-center text-uppercase ">Relojes Deportivos</h3>
                 </a>
@@ -160,18 +182,21 @@
             <article class="p-4 d-flex flex-column">
                 <span class="material-symbols-outlined text-end" id="close">close</span>
                 <h2>Iniciar sesión</h2>
-                <form action="" class="d-flex flex-column" id="form">
+                <form action="index.html" class="d-flex flex-column" id="form">
                     <input type="text" class="form-control mb-3" name="text" id="text" placeholder="Nombre de usuario">
                     <input type="password" class="form-control mb-3" name="password" id="password" placeholder="Contraseña">
                     <div class="d-flex align-items-center justify-content-center mb-3">
-                        <p class="m-0">¿Es tu primera vez llegando <strong>A TIEMPO</strong>?</p> <a href="#" class="ms-2">Registrate</a>
+                        <p class="m-0">¿Es tu primera vez llegando <strong>A TIEMPO</strong>?</p> <a href="registro.html" class="ms-2">Registrate</a>
 
                     </div>
                     <input type="submit" class="btn btn-success" value="Iniciar Sesion">
                 </form>
             </article>
         </section>
+        <div id="toastContainer" aria-live="polite" aria-atomic="true" class="position-absolute">
+        </div>
     </main>
+    
     <footer class="bg-warning bg-gradient">
         <section class="container d-flex align-items-center justify-content-between">
             <article class="row">
@@ -191,5 +216,6 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="app.js"></script>
+    <script src="buscador.js"></script>
 </body>
 </html>

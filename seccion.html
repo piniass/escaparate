@@ -18,6 +18,18 @@
         .imagen-carta:hover, .imgSection:hover{
             transform: scale(1.5);
         }
+
+        .icono{
+            font-size: 2rem;
+        }
+
+        .icono:hover{
+            cursor: pointer;
+        }
+       
+        #close{
+            cursor: pointer;
+        }
     
         @media only screen and (max-width: 991px) {
             video {
@@ -36,9 +48,14 @@
         <nav class="navbar navbar-expand-lg d-flex align-items-center pb-0">
             <a class="navbar-brand" href="index.html">A tiempo</a>
 
-            <div class="order-lg-last d-flex align-items-center">
-                <span class="material-symbols-outlined ms-3 icono" >person</span>
-                <span class="material-symbols-outlined ms-3 icono">shopping_cart</span>
+            <div class="order-lg-last d-flex align-items-center" id="btn-container">
+                <span class="material-symbols-outlined ms-3 icono" id="loginIcon">person</span>
+                <button class="border border-0 bg-white p-0 d-flex align-content-center justify-content-center" id="carrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                    <span class="material-symbols-outlined ms-3 icono" >shopping_cart</span>
+
+                </button>
+
+              
                 <button class="navbar-toggler ms-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -65,9 +82,22 @@
         <hr>
     </header>
 
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+          <h3 class="offcanvas-title" id="offcanvasRightLabel">Carrito de compra</h3>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <h4>Productos del carrito</h4>
+          <div id="elementos">
+  
+          </div>
+        </div>
+      </div>
+
     <main class="container">
         <section class="overflow-hidden ">
-            <video id="video" autoplay muted loop class="object-fit-cover"></video>
+            <video id="video" autoplay muted loop class="object-fit-cover w-100"></video>
         </section>
 
         <div class="d-flex align-items-center justify-content-between">

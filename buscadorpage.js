@@ -1,4 +1,3 @@
-window.addEventListener('load', iniciar);
 const div = document.getElementsByTagName('div')[0];
 const imgCarousel = document.getElementsByClassName('img-carousel')
 const tituloCarousel = document.getElementsByClassName('titulo-carousel')
@@ -18,17 +17,13 @@ const elementos = document.getElementById('elementos')
 let bienvenida;
 let usuario;
 const relojCarrito = document.createElement('div')
+let productos = []
 
+window.addEventListener('load', iniciar);
 function iniciar() {
-    fetchCarousel();
-    fetchCard()
     llamarStorage()
     crearCarritoCarga()
 }
-
-loginIcon.addEventListener('click', toggleForm)
-closeIcon.addEventListener('click',closeForm)
-form.addEventListener('submit', validarForm, false)
 
 const usuarioExistente = {
     nombre: "Susana",
@@ -97,7 +92,6 @@ function llamarStorage(){
         console.log(usuarioRecuperado);
 
         bienvenida = true
-        crearNotificacion()
         loginIcon.classList.add('d-none');
         const dropdown = document.createElement('div')
         dropdown.classList.add('dropdown')
@@ -113,6 +107,7 @@ function llamarStorage(){
         `
     }
 }
+
 
 function cargarCarrito(){
     var usuarioRecuperadoJSON = localStorage.getItem("usuario");
@@ -140,111 +135,78 @@ function cerrarSesion() {
     window.location.href = 'index.html'
 }
 
-function crearNotificacion(){
-    if(bienvenida){
-        Notification.requestPermission()
-        .then( resultado => {
-        console.log('El resultado es ', resultado)
-    mostrarNotificacion()
-    })
-    }   
-}
-
-function mostrarNotificacion(){
-    if (Notification.permission == 'granted') {
-       const notificacion = new Notification('Has llegado A tiempo!', {
-    body: `Hola, ${localStorage.getItem("nombre")}, has llegado a tu hora!`,
-        });
-    }
-    bienvenida = false
-}
-function validarForm(ev){
-    if(inputNombre.value == usuarioExistente.nombre && inputPassword.value == usuarioExistente.contrasena){
-        localStorage.setItem("nombre", `${usuarioExistente.nombre}`);
-        localStorage.setItem("mail", `${usuarioExistente.mail}`);
-        localStorage.setItem("tlf", `${usuarioExistente.tlf}`);
-        localStorage.setItem("dir", `${usuarioExistente.dir}`);
-        usuario = {
-            nombre: `${localStorage.getItem("nombre")}`,
-            mail: `${localStorage.getItem("mail")}`,
-            tlf: `${localStorage.getItem("tlf")}`,
-            dir: `${localStorage.getItem("dir")}`,
-            carrito: [] 
-        }
-        var usuarioJSON = JSON.stringify(usuario);
-
-        // Guardar el objeto usuario en el almacenamiento local
-        localStorage.setItem("usuario", usuarioJSON);
-        return true
-    } else {
-        ev.preventDefault()
-        return false
-    }
-}
-
-function toggleForm() {
-    if (localStorage.getItem("nombre") === null || localStorage.getItem("nombre") === undefined) {
-        formSession.classList.toggle('d-none');
-        document.getElementsByTagName('body')[0].classList.toggle('overflow-hidden');
-    } else {   
-        console.log(localStorage.getItem("nombre"))
-        console.log("Storage Almacenada")
-    }
-}
-
-function closeForm(){
-    formSession.classList.add('d-none')
-    document.getElementsByTagName('body')[0].classList.remove('overflow-hidden')
-}
-
-function fetchCarousel() {
-    fetch(url)
-        .then(res => res.json())
-        .then(data => loadCarousel(data))
-        .catch(error => console.error('Error al cargar el archivo JSON:', error));
-}
-
-function fetchCard(){
-    fetch(url)
-        .then(res=>res.json())
-        .then(data=>createCards(data))
+// Obtén el parámetro de búsqueda de la URL
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const searchTerm = urlParams.get('search');
+// Realiza la búsqueda en tu archivo JSON utilizando el término de búsqueda
+fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.relojes)
+        const reloj = data.relojes
+        const resultados = reloj.filter(item => {
+        const nombreEnMinusculas = item.nombre.toLowerCase();
+        const descripcionEnMinusculas = item.descripcion.toLowerCase();
+        const categoriaEnMinusculas = item.categoria.toLowerCase();
+        const searchTermEnMinusculas = searchTerm.toLowerCase();
         
-}
+            return nombreEnMinusculas.includes(searchTermEnMinusculas) ||
+                   descripcionEnMinusculas.includes(searchTermEnMinusculas) ||
+                   categoriaEnMinusculas.includes(searchTermEnMinusculas);
+        });
 
-function loadCarousel(data) {
-    for (let i = 0; i < imgCarousel.length; i++) {
-        let relojes = data.relojes[i]; 
-        imgCarousel[i].setAttribute('src', relojes.imagen);
-        console.log(relojes.nombre)
-        tituloCarousel[i].innerHTML = relojes.nombre
-        descCarousel[i].innerHTML = relojes.descripcion
-        // console.log(imgCarousel[i]);
-    }
-}
+        // Haz algo con los resultados, como mostrarlos en la página
+        console.log(resultados);
+        if(resultados.length > 0){
+            createCards(resultados)
+        } else {
+            const nada = document.createElement('div')
+            nada.classList.add('m-auto')
+            nada.innerHTML = `<h2 class="text-center">No hay nada que se ajuste a tu busqueda</h2>
+            <img src="img/emoji-triste.png" class="d-block mx-auto w-50">
+            `
+            document.getElementsByTagName('main')[0].appendChild(nada)
+        }
+    })
+    .catch(error => console.error('Error al realizar la búsqueda:', error));
+
 function createCards(data) {
-    let cartas = 3
-    for (let i = 0; i < cartas; i++) {
-        let relojes = data.relojes[i];
+    console.log("Me meto en crear cartas")
+    console.log(data[0].imagen)
+    for (let i = 0; i < data.length; i++) {
+        let relojes = data[i];
         cardSection.innerHTML += `
-            <article class="col-12 m-1 p-0 card">
-                <div class="card-header p-0">
-                    <img src="${relojes.imagen}" class="object-fit-cover imagen-carta w-100" alt="${relojes.nombre}" height="300px" loading="lazy">
-                </div>
-                <div class="p-3">
-                    <h5>${relojes.nombre}</h5>
-                    <p>${relojes.descripcion}</p>
-                    <p>Categoria: ${relojes.categoria}</p>
-                    <p>Precio: ${relojes.precio}€</p>
-                    <p>${relojes.descripcion}</p>
-                    <p class="d-flex align-items-center">Valoracion: <span>${getValoracion(relojes.valoracion.puntuacion)}</span></p>
-                    <button class="btn btn-warning bg-gradient boton" onclick="anadirCarrito('${relojes.id}')">Añadir al carrito</button>
-                    </div>
-            </article>
+        <div class="col-md-4 mb-3">
+                    <article class="card">
+                        <div class="card-header p-0">
+                            <img src="${relojes.imagen}" class="object-fit-cover imagen-carta w-100" alt="${relojes.nombre}" height="300px" loading="lazy">
+                        </div>
+                        <div class="p-3">
+                            <h5>${relojes.nombre}</h5>
+                            <p>${relojes.descripcion}</p>
+                            <p>Categoria: ${relojes.categoria}</p>
+                            <p>Precio: ${relojes.precio}€</p>
+                            <p>${relojes.descripcion}</p>
+                            <p class="d-flex align-items-center">Valoracion: <span>${getValoracion(relojes.valoracion.puntuacion)}</span></p>
+                            <button class="btn btn-warning bg-gradient boton" onclick="anadirCarrito('${relojes.id}')">Añadir al carrito</button>
+                        </div>
+                    </article>
+            </div>
         `;
     }
 }
 
+function getValoracion(estrellas){
+    const estrella = document.createElement('span')
+    estrella.innerHTML = ''
 
+    for (let index = 0; index < 5; index++) {
+        estrella.innerHTML += '<span class="material-symbols-outlined text-warning ">star</span>'
+     }
+     estrella.classList.add('material-symbols-outlined')
+    return estrella.innerHTML
+}
 
 function anadirCarrito(id) {
     if(localStorage.getItem("nombre") === null || localStorage.getItem("nombre") === undefined){
@@ -277,30 +239,16 @@ function anadirCarrito(id) {
         console.log("Inserto")
         console.log(usuario.carrito)
         usuario.carrito.push(id)
-
         var usuarioJSON = JSON.stringify(usuario);
-
-        // Guardar el objeto usuario en el almacenamiento local
         localStorage.setItem("usuario", usuarioJSON);
-        // crearElementoCarrito(id)
         crearElementoCarrito()
-
-        
-        // Recuperar el objeto usuario del almacenamiento local
         var usuarioRecuperadoJSON = localStorage.getItem("usuario");
-
         console.log(usuarioRecuperadoJSON);
-
-
         var usuarioRecuperado = JSON.parse(usuarioRecuperadoJSON);
-
         console.log(usuarioRecuperado);
-
-
-        // console.log("Precio: " + precio);
     }
 }
-let productos = []
+
 function crearElementoCarrito() {
     productos = [];
     
@@ -357,15 +305,4 @@ function crearElementoCarrito() {
             elementos.appendChild(relojCarrito)
             console.log(relojCarrito)
         });
-}
-
-function getValoracion(estrellas){
-    const estrella = document.createElement('span')
-    estrella.innerHTML = ''
-
-    for (let index = 0; index < 5; index++) {
-        estrella.innerHTML += '<span class="material-symbols-outlined text-warning ">star</span>'
-     }
-     estrella.classList.add('material-symbols-outlined')
-    return estrella.innerHTML
 }
